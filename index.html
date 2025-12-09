@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegador Incoterms</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>🧭 Navegador Interactivo Incoterms® 2020</h1>
+        <p>Herramienta para la selección, visualización y comparación de reglas.</p>
+    </header>
+
+    <main>
+        <section id="visualizador" class="card">
+            <h2>Visualizador de Obligaciones</h2>
+            <div id="diagrama-incoterms">
+                </div>
+            <p class="nota-riesgo">🛑 Riesgo | 💰 Costo</p>
+        </section>
+
+        <section id="asistente" class="card">
+            <h2>Asistente de Selección</h2>
+            <div class="asistente-form">
+                <div class="pregunta">
+                    <label>1. ¿Qué modo de transporte usará?</label>
+                    <select id="q1-modo">
+                        <option value="cualquier">Cualquier Modo (Contenedor, Carretera, Aéreo)</option>
+                        <option value="maritimo">Marítimo/Fluvial (Buque, Granel, Break Bulk)</option>
+                    </select>
+                </div>
+
+                <div class="pregunta">
+                    <label>2. ¿Desea que el Vendedor gestione el Transporte Principal (Grupo C o D)?</label>
+                    <div class="opciones-radio">
+                        <input type="radio" name="q2-transporte" value="si" id="transp-si">
+                        <label for="transp-si">Sí (Mayor responsabilidad del vendedor)</label>
+                        <input type="radio" name="q2-transporte" value="no" id="transp-no">
+                        <label for="transp-no">No (Mayor responsabilidad del comprador)</label>
+                    </div>
+                </div>
+
+                <div class="pregunta">
+                    <label>3. ¿Es obligatorio que el Vendedor contrate el Seguro para el Comprador?</label>
+                    <div class="opciones-radio">
+                        <input type="radio" name="q3-seguro" value="si" id="seguro-si">
+                        <label for="seguro-si">Sí (Solo CIP o CIF)</label>
+                        <input type="radio" name="q3-seguro" value="no" id="seguro-no" checked>
+                        <label for="seguro-no">No</label>
+                    </div>
+                </div>
+
+                <button id="btn-sugerir">🚀 Sugerir Incoterm</button>
+            </div>
+            <div id="resultado-sugerencia" class="resultado"></div>
+        </section>
+
+        <section id="comparador" class="card">
+            <h2>Herramienta de Comparación Dinámica</h2>
+            <div class="comparador-controles">
+                <label for="select-incoterms">Seleccione 2 a 4 Incoterms:</label>
+                <select id="select-incoterms" multiple>
+                    </select>
+                <button id="btn-comparar">Comparar</button>
+            </div>
+            <div id="tabla-comparacion" class="resultado tabla-responsiva">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 StevepDev®</p>
+    </footer>
+</body>
+</html>

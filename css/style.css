@@ -1,0 +1,219 @@
+:root {
+    /* Paleta de colores Incoterms por grupo */
+    --color-e: #e74c3c; /* Rojo */
+    --color-f: #f39c12; /* Naranja */
+    --color-c: #3498db; /* Azul */
+    --color-d: #27ae60; /* Verde */
+    --color-fondo: #ecf0f1;
+    --color-texto: #34495e;
+    --color-sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--color-texto);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--color-sombra);
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Estilo de Tarjetas (Secciones) */
+.card {
+    background-color: #fff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: var(--color-sombra);
+}
+
+h2 {
+    color: var(--color-texto);
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Diagrama de Visualización --- */
+
+#diagrama-incoterms {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Para responsividad */
+}
+
+.incoterm-item {
+    flex: 1 1 80px; /* Flexibilidad para ajustar tamaño */
+    min-height: 60px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: transform 0.2s, opacity 0.2s;
+    cursor: help;
+    padding: 5px;
+}
+
+.incoterm-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.simbolos {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.nota-riesgo {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* --- Asistente y Controles --- */
+.asistente-form, .comparador-controles {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.pregunta {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+}
+
+.opciones-radio {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+select, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button {
+    background-color: var(--color-d);
+    color: white;
+    border: none;
+    font-weight: bold;
+    align-self: flex-end; /* Para que el botón se alinee abajo */
+}
+
+button:hover {
+    background-color: #2ecc71;
+}
+
+/* --- Resultados y Alertas --- */
+
+.resultado {
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.alerta {
+    background-color: #f7e0e0;
+    color: var(--color-e);
+    border: 1px solid var(--color-e);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.exito {
+    color: var(--color-d);
+    font-weight: bold;
+}
+
+.resultado-term {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* --- Tabla de Comparación --- */
+.tabla-responsiva {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    min-width: 600px; /* Mínimo para asegurar legibilidad */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--color-texto);
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+    .asistente-form, .comparador-controles {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .pregunta {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+        align-self: auto;
+    }
+}
